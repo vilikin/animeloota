@@ -15,8 +15,8 @@ class ListView extends React.Component {
                     <ListItem key={anime.id} {...anime}/>
                 ))
             }
-            <div className="text-center">
-                <Link to="/add" className="btn btn-outline-light btn-lg custom-btn">Add anime</Link>
+            <div className="text-center btn-container">
+                <Link to="/add" className="btn btn-outline-light btn-lg custom-btn clickable">Add anime</Link>
             </div>
         </div>
     }

@@ -1,2 +1,84 @@
 @import 'colors';
 @import '~bootstrap/scss/bootstrap.scss';
+
+body {
+  background-color: $color_orange;
+  font-family: 'Acme', sans-serif;
+}
+
+.animeloota-header {
+  font-size: 70px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+.custom-btn {
+  margin: 0 5px;
+}
+
+.custom-btn:hover {
+  color: black;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 15px;
+
+  .pic {
+    border-radius: 10px 0 0 10px;
+    height: 150px;
+    width: 150px;
+    margin-right: 50px;
+  }
+
+  h3 {
+    word-break: break-all;
+  }
+
+  .plus {
+    cursor: pointer;
+  }
+
+  .counters {
+    display: flex;
+    flex-grow: 1;
+    justify-self: flex-end;
+    justify-content: flex-end;
+  }
+}
+
+.add-anime {
+  background-color: white;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.counter {
+  display: flex;
+  width: 60px;
+  margin-right: 25px;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+
+  div {
+    flex: 1;
+    user-select: none;
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}

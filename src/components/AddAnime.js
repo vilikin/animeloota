@@ -22,6 +22,10 @@ class AddAnime extends React.Component {
         this.props.history.push("/");
     };
 
+    back = (e) => {
+        this.props.history.push("/");
+    };
+
     onChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -34,6 +38,7 @@ class AddAnime extends React.Component {
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <input id="name"
+                           required
                            className="form-control"
                            type="text"
                            name="name"
@@ -54,6 +59,8 @@ class AddAnime extends React.Component {
                 <div className="form-group">
                     <label htmlFor="picture">Picture</label>
                     <input id="picture"
+                           title="Kirjoita toimiva URL osoite"
+                           pattern="^(http://|https://)+.*$"
                            className="form-control"
                            type="text"
                            name="picture"
@@ -62,8 +69,12 @@ class AddAnime extends React.Component {
                 </div>
             </div>
 
-            <div className="text-center">
-                <button type="submit" className="btn btn-outline-light btn-lg custom-btn">Add anime</button>
+            <div className="text-center btn-container">
+                <button type="submit" className="btn btn-outline-light btn-lg custom-btn clickable">Submit</button>
+                <button className="btn btn-outline-light btn-lg custom-btn clickable"
+                        onClick={this.back}>
+                    Back
+                </button>
             </div>
         </form>;
     }
