@@ -1,25 +1,24 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {decrease, increase} from "../store/animeReducer";
 import Counter from "./Counter";
 
 class ListItem extends React.Component {
 
     increaseSeason = () => {
-        this.props.increase(this.props.id, "season");
+
     };
 
     increaseEpisode = () => {
-        this.props.increase(this.props.id, "episode");
+
     };
 
     decreaseSeason = () => {
-        this.props.decrease(this.props.id, "season");
+
     };
 
     decreaseEpisode = () => {
-        this.props.decrease(this.props.id, "episode");
+
     };
 
     render() {
@@ -45,14 +44,4 @@ class ListItem extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    // state goes here
-});
-
-const mapDispatchToProps = {
-    increase,
-    decrease
-};
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(ListItem);
-export default withRouter(Container);
+export default withRouter(ListItem);

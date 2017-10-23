@@ -1,20 +1,13 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link, withRouter} from "react-router-dom";
-import ListItem from "./ListItem";
-
-// ------------------------------------------------------
-// The actual component
-// ------------------------------------------------------
 
 class ListView extends React.Component {
     render() {
         return <div>
-            {
-                this.props.animes.map(anime => (
-                    <ListItem key={anime.id} {...anime}/>
-                ))
-            }
+
+            <h2>TODO: Display list of animes here</h2>
+
             <div className="text-center btn-container">
                 <Link to="/add" className="btn btn-outline-light btn-lg custom-btn clickable">Add anime</Link>
             </div>
@@ -22,17 +15,4 @@ class ListView extends React.Component {
     }
 }
 
-// ------------------------------------------------------
-// Redux things below...
-// ------------------------------------------------------
-
-const mapStateToProps = (state) => ({
-    animes: state.animes
-});
-
-const mapDispatchToProps = {
-    // actions go here
-};
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(ListView);
-export default withRouter(Container);
+export default withRouter(ListView);

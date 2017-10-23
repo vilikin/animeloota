@@ -4,28 +4,19 @@ import {addAnime} from "../store/animeReducer";
 import {connect} from "react-redux";
 
 class AddAnime extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            name: "",
-            description: "",
-            picture: ""
-        }
-    }
-
-    submitAnime = (e) => {
-        e.preventDefault();
-
-        this.props.addAnime(this.state.name, this.state.description, this.state.picture);
-
-        this.props.history.push("/");
+    // We use normal component state here, because no other component cares about data of these inputs
+    state = {
+        name: "",
+        description: "",
+        picture: ""
     };
 
     back = (e) => {
         this.props.history.push("/");
     };
 
+    // Handles changes to our input fields
     onChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -33,7 +24,7 @@ class AddAnime extends React.Component {
     };
 
     render() {
-        return <form onSubmit={this.submitAnime}>
+        return <form onSubmit={(e) => { e.preventDefault() }}>
             <div className="add-anime">
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
@@ -80,14 +71,5 @@ class AddAnime extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    // state goes here
-});
-
-const mapDispatchToProps = {
-    addAnime
-};
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(AddAnime);
-export default withRouter(Container);
+export default withRouter(AddAnime);
 
